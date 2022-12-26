@@ -1,0 +1,17 @@
+﻿@model List<String>
+@{
+    ViewBag.Title = "Courses";
+}
+
+<h1>Les Cours sont :</h1>
+
+@foreach(String cours in Model)
+{
+    Dictionary<string, string> param = new Dictionary<string, string> { { "course", cours } };
+    <div class="card" style="width: 18rem;">
+        <h3><a href="#" class="card-link" sp-area="" asp-controller="Student" asp-action="SearchStudents" 
+               asp-all-route-data="param">@cours </a></h3>
+    </div>
+}
+            
+
